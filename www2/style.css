@@ -1,0 +1,741 @@
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Gatok";
+    src: url("Gatok.otf") format("opentype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+.hero{
+    position:relative;
+
+    width:100%;
+    height:100vh;
+
+    background-image:url("bg-waves.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+}
+
+/* ------------------ MENU ------------------ */
+
+.header{
+    position:absolute;
+    top:25px;
+    width:100%;
+    z-index:5;
+}
+
+.nav{
+    display:flex;
+    justify-content:center;
+    gap:220px;
+}
+
+.nav a{
+    font-family:'Montserrat', sans-serif;
+    font-size:23px;
+    font-weight:500;
+
+    color:#FFF7AE;
+
+    text-decoration:none;
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.nav a:hover{
+    transform:translateY(-3px);
+}
+
+/* ------------------ TITLE ------------------ */
+
+.hero-title{
+
+    position:absolute;
+
+    top:90px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-family:"Gatok";
+
+    font-size:clamp(100px, 12vw, 190px);
+
+    color:#FFF7AE;
+
+    white-space:nowrap;
+
+    z-index:1;
+}
+/* ------------------ GIRL ------------------ */
+
+.hero-girl{
+
+    position:absolute;
+
+    width: 600px !important;
+
+    left:50%;
+    top:180px;
+
+    transform:
+        translateX(-50%)
+        rotate(-6deg);
+
+    z-index:2;
+}
+
+/* ------------------ BUTTON ------------------ */
+
+.contact-btn{
+
+    position:absolute;
+
+    right:8%;
+    top:42%;
+
+    width:300px;
+    height:95px;
+
+    border:none;
+
+    border-radius:54.5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #FFF7AE 0%,
+            #FFE1C6 50%,
+            #FFC6D9 100%
+        );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-family:'Montserrat', sans-serif;
+    font-size:33px;
+    font-weight:700;
+
+    color:#48284A;
+
+    z-index:3;
+
+    transition:.3s;
+}
+
+.contact-btn:hover{
+    transform:scale(1.05);
+}
+
+/* ------------------ TEXT ------------------ */
+
+.hero-description{
+
+    position:absolute;
+
+    left:5%;
+    bottom:10%;
+
+    width:306px;
+
+    font-family:'Montserrat', sans-serif;
+    font-size:28px;
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    line-height:1.15;
+
+    color:#FFF7AE;
+
+    z-index:3;
+}
+@media (max-width: 1600px){
+
+    .hero-title{
+        font-size:140px;
+    }
+
+    .hero-girl{
+        width:625px;
+    }
+
+    .contact-btn{
+        width:260px;
+        height:85px;
+        font-size:28px;
+    }
+
+    .hero-description{
+        font-size:24px;
+    }
+
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: #FFF6A9;
+
+    min-height: 900px;
+
+    padding: 80px 0;
+
+    text-align: center;
+}
+
+.about-transition{
+    height: 130px;
+
+    background: linear-gradient(
+        to bottom,
+        #FFF6A9 0%,
+        #FFE1C6 100%
+    );
+}
+
+.about-title {
+    font-family: "Gatok";
+    font-size: 170px;
+    color: #916C80;
+
+    margin-left: 140px;
+    margin-bottom: -80px;
+
+    text-align: left;
+}
+
+.about-note {
+    display: flex;
+    justify-content: center;
+
+    margin-top: -80x;
+    margin-bottom: -30px;
+}
+
+.note-image {
+    width: 1200px;
+    max-width: none;
+
+    display: block;
+    position: relative;
+    top: -50px;
+}
+
+.about-bottom-text {
+    font-family: "Montserrat";
+    font-size: 22px;
+    font-weight: 600;
+
+    color: #916C80;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    margin-top: -220px;
+}
+
+
+
+/* анимация появления */
+
+.hidden {
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition: all 1s ease;
+}
+
+.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* адаптив */
+
+@media (max-width: 1200px) {
+
+    .about-text-1,
+    .about-text-2,
+    .about-text-3 {
+        width: 90%;
+    }
+
+    .about-text-1,
+    .about-text-2 {
+        font-size: 26px;
+    }
+
+    .about-text-3 {
+        font-size: 18px;
+    }
+}
+
+/* ================= SKILLS ================= */
+
+.skills{
+    min-height: 1300px;
+    position: relative;
+
+    background:  #FFE1C6 ;
+
+    font-size: 28px;
+
+}
+
+.skills-title{
+    position: absolute;
+
+    top: 110px;
+    left: 70px;
+
+    font-family: "Gatok";
+    font-size: 170px;
+
+    color: #6F4D64;
+
+    z-index: 5;
+}
+
+.skills-board{
+    position: absolute;
+
+    width: 2300px;
+
+    right: -150px;
+    top: -210px;
+}
+
+.skills-items{
+    position: absolute;
+    z-index: 10;
+}
+
+.skill{
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: #6F4D64;
+
+    font-family: Montserrat;
+    font-weight: 700;
+}
+
+.skill-text{
+    width: 220px;
+    line-height: 1.1;
+    font-size: 24px;
+}
+
+.num{
+    font-family: "Gatok";
+    font-size: 100px;
+}
+
+/* позиции как в макете */
+
+.skill1{
+    left: 70px;
+    top: 450px;
+}
+
+.skill2{
+    left: 400px;
+    top: 600px;
+}
+
+.skill3{
+    left: 200px;
+    top: 750px;
+}
+
+.skill4{
+    left: 400px;
+    top: 900px;
+}
+
+.skill5{
+    left: 600px;
+    top: 1050px;
+}
+
+.skills-projects-transition{
+    height: 200px;
+
+    background: linear-gradient(
+        to bottom,
+        #FFE1C6,
+        #FFF7AE
+    );
+}
+
+/* ================= PROJECTS ================= */
+
+.projects {
+    background: #FFF7AE;
+    padding: 250px 0 100px;
+}
+
+.projects-title {
+
+    margin-left: 70px;
+   
+    margin-top: -350px;
+
+    font-family: "Gatok";
+    font-size: 180px;
+    color: #916C80;
+    
+    margin-bottom: 50px;
+}
+
+.project-card{
+    position: sticky;
+    top: 80px;
+
+    width: 100%;
+    max-width: 1800px;
+    height: 800px;
+
+    margin: 0 auto 80px;
+
+    padding: 40px 50px; 
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+.stamp-bg{
+    position: absolute;
+    top: 60px;
+    left: 0;
+
+    transform: scaleX(1.5);
+    transform-origin: center;
+
+    width: 100%;
+    height: calc(100% - 20px);
+
+    object-fit: fill;
+
+    z-index: 1;
+}
+
+.project-card-1 {
+    margin-top: -100px;
+    z-index: 1;
+}
+
+.project-card-2 {
+    z-index: 2;
+}
+
+
+.project-content{
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+
+    height: 400px;
+
+    padding-left: 100px;
+    padding-right: 100px;
+
+    margin-top: 80px;
+}
+
+.project-big {
+    width: 70%;
+
+}
+
+.project-big img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+}
+
+.project-small {
+
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+.project-small img {
+
+    width: 100%;
+    height: calc(50% - 15px);
+
+    object-fit: cover;
+
+    border-radius: 30px;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: -50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 120px;
+}
+
+.project-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 155px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #916C80;
+}
+
+.project-name {
+     font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #916C80;
+}
+
+.project-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+
+    margin-right: 35px;
+    
+    border: 4px solid #916C80;
+    border-radius: 40px;
+
+    padding: 10px 25px;
+
+    color: #916C80;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:#7B5A78;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* рваная бумага сверху */
+
+.contact::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:450px;
+    height:450px;
+
+    background:url("paper.png") no-repeat center;
+    background-size:contain;
+
+    z-index:1;
+}
+
+.contact-content{
+    width:85%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:relative;
+    z-index:2;
+}
+
+/* LET'S GET IN TOUCH */
+
+.contact-title{
+    font-family:"Gatok";
+    font-size:170px;
+    line-height:0.9;
+
+    color:#F2EEA4;
+}
+
+/* блок со стикером */
+
+.contact-form-wrap{
+    position:relative;
+
+    width: 1000px;
+    height: 750px;
+}
+
+/* сам розовый стикер */
+
+.contact-sticker{
+    position:absolute;
+    inset:0;
+
+    left: -220px;
+
+    top: 30px;
+
+    width: 1050px;
+    height: 850px;
+
+    object-fit:contain;
+}
+
+/* форма поверх стикера */
+
+.contact-form{
+    position:absolute;
+
+    top: 180px;
+    left:140px;
+    right: -30px;
+    bottom:40px;
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* инпуты */
+
+.contact-form input,
+.contact-form textarea{
+
+    background:transparent;
+
+    border:3px solid #916C80;
+    border-radius:18px;
+
+    padding:16px 20px;
+
+    font-size:28px;
+    font-weight:600;
+
+    color:#916C80;
+    outline:none;
+}
+
+.contact-form textarea{
+    height:120px;
+    resize:none;
+}
+
+/* кнопка */
+
+.contact-form button{
+
+    align-self:flex-end;
+
+    width:160px;
+    height:70px;
+
+    border:3px solid #916C80;
+    border-radius:18px;
+
+    background:transparent;
+
+    color:#916C80;
+
+    font-size:30px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+.contact-form button:hover{
+    background:#6D4F68; /* тёмно-фиолетовый */
+    color:#FFF4A8;      /* жёлтая надпись */
+}
+
+.contact-form button:active{
+    background:#F5D0E4;
+    color:#7B5A78;
+
+    box-shadow:
+        0 0 10px #F5D0E4,
+        0 0 25px #F5D0E4,
+        0 0 40px #F5D0E4;
+
+    transform:scale(0.97);
+}
+
+
+.hidden{
+    opacity: 0;
+    transform: translateY(80px);
+
+    transition: all 1s ease;
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
