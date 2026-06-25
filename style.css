@@ -739,3 +739,317 @@ body{
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* ===================================== */
+/* MOBILE */
+/* ===================================== */
+
+@media (max-width:768px){
+
+html,body{
+    overflow-x:hidden;
+}
+
+/* ---------- MENU ---------- */
+
+.header{
+    top:20px;
+}
+
+.nav{
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.nav a{
+    font-size:14px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    height:auto;
+    min-height:100vh;
+    padding-bottom:60px;
+}
+
+.hero-title{
+    position:relative;
+    top:40px;
+
+    font-size:58px;
+
+    white-space:normal;
+
+    text-align:center;
+}
+
+.hero-girl{
+    position:relative;
+
+    width:270px !important;
+
+    left:50%;
+    top:40px;
+
+    transform:translateX(-50%);
+}
+
+.contact-btn{
+    position:relative;
+
+    top:60px;
+    right:auto;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:220px;
+    height:70px;
+
+    font-size:22px;
+}
+
+.hero-description{
+    position:relative;
+
+    left:auto;
+    bottom:auto;
+
+    width:100%;
+
+    margin-top:90px;
+
+    text-align:center;
+
+    font-size:18px;
+}
+
+/* ---------- ABOUT ---------- */
+
+.about{
+    min-height:auto;
+    padding:60px 20px;
+}
+
+.about-title{
+    font-size:70px;
+
+    margin:0;
+
+    text-align:center;
+}
+
+.note-image{
+    width:95%;
+
+    top:0;
+}
+
+.about-bottom-text{
+    margin-top:-70px;
+
+    font-size:16px;
+
+    width:90%;
+}
+
+/* ---------- SKILLS ---------- */
+
+.skills{
+    min-height:auto;
+
+    padding:60px 20px;
+}
+
+.skills-title{
+    position:relative;
+
+    top:0;
+    left:0;
+
+    text-align:center;
+
+    font-size:70px;
+
+    margin-bottom:40px;
+}
+
+.skills-board{
+    display:none;
+}
+
+.skills-items{
+    position:static;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:25px;
+}
+
+.skill{
+    position:static;
+}
+
+.num{
+    font-size:70px;
+}
+
+.skill-text{
+    font-size:18px;
+}
+
+/* ---------- PROJECTS ---------- */
+
+.projects{
+    padding:80px 0;
+}
+
+.projects-title{
+
+    margin:0 0 40px;
+
+    text-align:center;
+
+    font-size:70px;
+}
+
+.project-card{
+
+    position:relative;
+
+    top:0;
+
+    width:95%;
+
+    height:auto;
+
+    padding:30px 20px;
+}
+
+.stamp-bg{
+
+    transform:none;
+
+    object-fit:cover;
+}
+
+.project-top{
+
+    padding:40px 20px 0;
+
+    margin-bottom:20px;
+}
+
+.project-left{
+
+    margin-left:0;
+}
+
+.project-label{
+
+    font-size:26px;
+}
+
+.project-name{
+
+    font-size:16px;
+}
+
+.project-btn{
+
+    font-size:14px;
+
+    padding:8px 16px;
+}
+
+.project-content{
+
+    flex-direction:column;
+
+    padding:20px;
+
+    margin-top:20px;
+
+    height:auto;
+}
+
+.project-big,
+.project-small{
+
+    width:100%;
+}
+
+.project-small{
+
+    flex-direction:row;
+}
+
+.project-small img{
+
+    height:140px;
+}
+
+/* ---------- CONTACT ---------- */
+
+.contact{
+    min-height:auto;
+
+    padding:80px 20px;
+}
+
+.contact-content{
+
+    flex-direction:column;
+
+    gap:40px;
+}
+
+.contact-title{
+
+    text-align:center;
+
+    font-size:65px;
+}
+
+.contact-form-wrap{
+
+    width:100%;
+
+    height:620px;
+}
+
+.contact-sticker{
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+}
+
+.contact-form{
+
+    top:110px;
+
+    left:40px;
+    right:40px;
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    font-size:18px;
+}
+
+.contact-form button{
+
+    width:120px;
+    height:55px;
+
+    font-size:18px;
+}
+
+}
