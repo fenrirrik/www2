@@ -836,23 +836,25 @@ html,body{
 .about-title{
     font-size:70px;
 
-    margin:0;
+    margin:0 0 20px;
 
     text-align:center;
 }
 
 .note-image{
     width:95%;
-
+    max-width: 100%;
     top:0;
 }
 
 .about-bottom-text{
-    margin-top:-70px;
+    margin: 40px auto 0;
 
     font-size:16px;
 
     width:90%;
+    max-width: 640px;
+    line-height: 1.4;
 }
 
 /* ---------- SKILLS ---------- */
