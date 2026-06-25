@@ -838,6 +838,8 @@ html{
 .note-image{
     width:430px;
     top:0;
+    position: relative;
+    left: -18px;
 }
 
 .about-bottom-text{
@@ -891,60 +893,64 @@ html{
 }
 
 .projects-title{
-    margin:0 0 30px;
-
+    margin:0 0 20px;
     text-align:center;
+    font-size:72px;
 
-    font-size:82px;
+    position: relative;
+    z-index: 20;
 }
 
 .project-card{
 
     position:relative;
-    top:auto;
 
     width:96%;
-    height:auto;
+    height:700px;
 
-    padding:20px;
+    padding:25px 20px 35px;
 
-    margin-bottom:40px;
+    margin-bottom:50px;
 }
 
 .stamp-bg{
 
-    top:20px;
+    top:0px;
+    left: 0;
 
-    height:145px;
+    width: 100%;
+    height:700px;
+
+    object-fit: fill;
 }
 
 .project-top{
 
-    padding:35px 20px 0;
-
+    padding:45px 25px 0;
+    margin: 0;
+    align-items: center;
     margin-bottom:15px;
 }
 
 .project-left{
 
-    margin-left:40px;
+    margin-left:0;
 }
 
 .project-label{
 
-    font-size:18px;
+    font-size:28px;
 }
 
 .project-name{
 
-    font-size:13px;
+    font-size:16px;
 }
 
 .project-btn{
 
-    margin-right:15px;
 
-    padding:8px 16px;
+    padding:10px 1p8x;
 
     font-size:14px;
 
@@ -957,11 +963,11 @@ html{
 
     flex-direction:column;
 
-    padding:0 20px;
+    padding:0 25px;
 
     height:auto;
 
-    margin-top:15px;
+    margin-top:25px;
 }
 
 .project-big,
@@ -972,6 +978,8 @@ html{
 
 .project-small{
 
+    margin-top: 12px;
+
     flex-direction:row;
 
     gap:12px;
@@ -979,8 +987,9 @@ html{
 
 .project-small img{
 
-    width:50%;
-    height:170px;
+    width:calc(50%-6px);
+    height:150px;
+    border-radius: 20px;
 }
 
 
@@ -1024,12 +1033,12 @@ html{
 
 .contact-sticker{
 
-    left:50%;
-    top:10px;
+    left: -25px;
+    top:170px;
 
     transform:translateX(-50%);
 
-    width:520px;
+    width:430px;
 
     height:auto;
 }
@@ -1038,12 +1047,12 @@ html{
 
 .contact-form{
 
-    top:70px;
+    top:215px;
 
-    left:25px;
-    right:25px;
+    left:18px;
+    right:18px;
 
-    gap:14px;
+    gap:12px;
 }
 
 /* инпуты шире и ниже */
@@ -1053,14 +1062,22 @@ html{
 
     width:100%;
 
-    padding:10px 18px;
+    padding:14px 22px;
 
-    font-size:17px;
+    font-size:18px;
+
+    border: 3px solid #6D4F68;
+    border-radius: 22px;
+}
+
+.contact-form input{
+
+    height:64px;
 }
 
 .contact-form textarea{
 
-    height:120px;
+    height:110px;
 }
 
 .contact-form button{
@@ -1068,9 +1085,10 @@ html{
     align-self:center;
 
     width:140px;
-    height:50px;
+    height:54px;
 
     font-size:20px;
+    margin: 10px auto 0;
 }
 
 }
