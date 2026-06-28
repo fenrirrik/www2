@@ -741,10 +741,15 @@ body{
 }
 
 
+/* ================================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ — вставить в конец style.css
+   Breakpoints: 768px (планшет) и 480px (телефон)
+   ================================================ */
+
 @media (max-width: 768px) {
- 
+
     /* ================= ШАПКА ФИКСИРОВАННАЯ ================= */
- 
+
     .header {
         position: fixed;
         top: 0;
@@ -756,34 +761,34 @@ body{
         padding: 10px 0;
         z-index: 100;
     }
- 
+
     .nav {
         gap: 30px;
         flex-wrap: wrap;
         padding: 0 20px;
         justify-content: center;
     }
- 
+
     .nav a {
         font-size: 15px;
     }
- 
+
     /* ================= HERO ================= */
- 
+
     .hero {
         height: 100svh;
         min-height: 600px;
         /* отступ сверху под фиксированную шапку */
         padding-top: 60px;
     }
- 
+
     .hero-title {
         font-size: 52px;
         top: 75px;
         white-space: nowrap;
         letter-spacing: -1px;
     }
- 
+
     /* девочка — посередине страницы */
     .hero-girl {
         width: 300px !important;
@@ -791,7 +796,7 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-48%) rotate(-6deg);
     }
- 
+
     .contact-btn {
         right: 50%;
         transform: translateX(50%);
@@ -801,7 +806,7 @@ body{
         height: 70px;
         font-size: 22px;
     }
- 
+
     .hero-description {
         left: 50%;
         transform: translateX(-50%);
@@ -811,31 +816,31 @@ body{
         text-align: center;
         white-space: nowrap;
     }
- 
+
     /* ================= ABOUT ================= */
- 
+
     .about {
         min-height: auto;
         padding: 50px 20px 40px;
     }
- 
+
     .about-title {
         font-size: 72px;
         margin-left: 0;
         margin-bottom: -30px;
         text-align: center;
     }
- 
+
     .about-note {
         margin-bottom: 0;
     }
- 
+
     .note-image {
         width: 100%;
         max-width: 100%;
         top: 0;
     }
- 
+
     .about-bottom-text {
         font-size: 14px;
         max-width: 100%;
@@ -843,19 +848,19 @@ body{
         padding: 0 10px;
         text-align: center;
     }
- 
+
     .about-transition {
         height: 60px;
     }
- 
+
     /* ================= SKILLS ================= */
- 
+
     .skills {
         min-height: auto;
         padding-bottom: 80px;
         overflow: hidden;
     }
- 
+
     .skills-title {
         font-size: 72px;
         position: relative;
@@ -863,11 +868,11 @@ body{
         left: auto;
         padding: 40px 0 0 20px;
     }
- 
+
     .skills-board {
         display: none;
     }
- 
+
     .skills-items {
         position: relative;
         display: flex;
@@ -875,53 +880,55 @@ body{
         gap: 24px;
         padding: 30px 20px 40px;
     }
- 
+
     .skill {
         position: static !important;
         left: auto !important;
         top: auto !important;
     }
- 
+
     .num {
         font-size: 60px;
         min-width: 70px;
     }
- 
+
     .skill-text {
         font-size: 20px;
         width: auto;
     }
- 
+
     .skills-projects-transition {
         height: 80px;
     }
- 
+
     /* ================= PROJECTS ================= */
- 
+
     .projects {
         padding: 40px 0 60px;
     }
- 
+
     .projects-title {
         font-size: 72px;
         margin-left: 20px;
         margin-top: 0;
         margin-bottom: 20px;
     }
- 
+
     /* карточка — вписывается целиком внутрь марки */
     .project-card {
-        position: static;
+        position: relative;
         height: auto;
         width: 92%;
         max-width: 420px;
-        padding: 0;
+        /* padding-bottom резервирует место под зубчики марки снизу */
+        padding: 0 0 28px 0;
         margin: 0 auto 32px;
         border-radius: 0;
-        overflow: hidden;
+        overflow: visible;
         box-sizing: border-box;
     }
- 
+
+    /* марка растягивается по высоте карточки */
     .stamp-bg {
         position: absolute;
         top: 0;
@@ -931,8 +938,9 @@ body{
         height: 100%;
         object-fit: fill;
         border-radius: 0;
+        pointer-events: none;
     }
- 
+
     /* шапка карточки: номер, название, кнопка — в одну строку */
     .project-top {
         position: relative;
@@ -946,7 +954,7 @@ body{
         margin-bottom: 10px;
         gap: 8px;
     }
- 
+
     .project-left {
         margin-left: 0;
         display: flex;
@@ -956,21 +964,21 @@ body{
         flex-shrink: 1;
         min-width: 0;
     }
- 
+
     .project-info {
         min-width: 0;
     }
- 
+
     .project-label {
         font-size: 16px;
         white-space: nowrap;
     }
- 
+
     .project-name {
         font-size: 12px;
         white-space: nowrap;
     }
- 
+
     .project-btn {
         font-size: 12px;
         padding: 6px 12px;
@@ -980,32 +988,32 @@ body{
         flex-shrink: 0;
         border-radius: 30px;
     }
- 
+
     /* изображения — горизонтальная раскладка как на десктопе */
     .project-content {
         position: relative;
         z-index: 2;
         display: flex;
         flex-direction: row;
-        height: 160px;
-        padding: 0 12px 14px 12px;
+        height: 170px;
+        padding: 0 14px 0 14px;
         gap: 8px;
         margin-top: 0;
     }
- 
+
     .project-big {
         width: 60%;
         height: 100%;
         flex-shrink: 0;
     }
- 
+
     .project-big img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 12px;
     }
- 
+
     .project-small {
         width: 40%;
         height: 100%;
@@ -1013,49 +1021,49 @@ body{
         gap: 8px;
         flex-shrink: 0;
     }
- 
+
     .project-small img {
         width: 100%;
         height: calc(50% - 4px);
         object-fit: cover;
         border-radius: 12px;
     }
- 
+
     /* ================= CONTACT ================= */
- 
+
     .contact {
         min-height: auto;
         padding: 60px 20px 60px;
         align-items: flex-start;
     }
- 
+
     .contact::before {
         width: 180px;
         height: 180px;
     }
- 
+
     .contact-content {
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
         gap: 40px;
     }
- 
+
     .contact-title {
         font-size: 72px;
         line-height: 0.9;
     }
- 
+
     .contact-form-wrap {
         width: 100%;
         height: auto;
         position: relative;
     }
- 
+
     .contact-sticker {
         display: none;
     }
- 
+
     .contact-form {
         position: static;
         width: 100%;
@@ -1064,18 +1072,18 @@ body{
         padding: 24px 20px;
         gap: 16px;
     }
- 
+
     .contact-form input,
     .contact-form textarea {
         font-size: 18px;
         padding: 14px 16px;
         border-width: 2px;
     }
- 
+
     .contact-form textarea {
         height: 110px;
     }
- 
+
     .contact-form button {
         width: 130px;
         height: 55px;
@@ -1083,106 +1091,105 @@ body{
         border-width: 2px;
     }
 }
- 
+
 /* ================================================
    МАЛЕНЬКИЕ ТЕЛЕФОНЫ — до 480px
    ================================================ */
- 
+
 @media (max-width: 480px) {
- 
+
     /* ШАПКА */
- 
+
     .header {
         padding: 8px 0;
     }
- 
+
     .nav {
         gap: 16px;
         padding: 0 10px;
     }
- 
+
     .nav a {
         font-size: 13px;
     }
- 
+
     /* HERO */
- 
+
     .hero {
         padding-top: 55px;
     }
- 
+
     .hero-title {
         font-size: 38px;
         top: 62px;
     }
- 
+
     .hero-girl {
         width: 250px !important;
     }
- 
+
     .contact-btn {
         width: 190px;
         height: 60px;
         font-size: 18px;
         bottom: 12%;
     }
- 
+
     .hero-description {
         font-size: 12px;
         bottom: 3%;
     }
- 
+
     /* ABOUT */
- 
+
     .about-title {
         font-size: 58px;
     }
- 
+
     .about-bottom-text {
         font-size: 12px;
         margin-top: -50px;
     }
- 
+
     /* SKILLS */
- 
+
     .skills-title {
         font-size: 58px;
     }
- 
+
     .num {
         font-size: 48px;
         min-width: 55px;
     }
- 
+
     .skill-text {
         font-size: 17px;
     }
- 
+
     /* PROJECTS */
- 
+
     .projects-title {
         font-size: 58px;
     }
- 
+
     .project-content {
-        height: 130px;
+        height: 150px;
     }
- 
+
     /* CONTACT */
- 
+
     .contact-title {
         font-size: 58px;
     }
- 
+
     .contact-form input,
     .contact-form textarea {
         font-size: 16px;
     }
- 
+
     .contact-form button {
         width: 115px;
         height: 50px;
         font-size: 18px;
     }
 }
- 
