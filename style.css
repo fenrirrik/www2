@@ -903,101 +903,106 @@ body{
 
     /* ================= PROJECTS ================= */
 
-    .projects {
-        padding: 40px 0 60px;
-    }
-
-    .projects-title {
-        font-size: 72px;
-        margin-left: 20px;
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-
-    /* карточка — вписывается целиком внутрь марки */
-    .project-card {
+    .project-card{
     position: relative;
 
-    width: 100vw;
-    max-width: 100vw;
+    width: 100vw;          /* растягиваем по всей ширине экрана */
+    left: 50%;
+    transform: translateX(-50%);   /* убираем отступы по бокам */
 
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    padding: 20px 20px 22px;       /* уменьшаем высоту марки */
+    margin-bottom: 30px;
 
-    padding: 0 0 40px;
-
-    overflow: visible;
+    box-sizing: border-box;
 }
 
-    /* марка растягивается по высоте карточки */
-    .stamp-bg {
+.stamp-bg{
     position: absolute;
 
     top: 0;
     left: 0;
 
-    width: 100%;
-    height: 100%;
+    width: 100%;          /* растягиваем по ширине */
+    height: 100%;         /* уменьшаем по высоте */
 
     object-fit: fill;
 
     transform: none;
 
-    z-index: 1;
+    pointer-events: none;
 }
-.project-top,
+
+.project-top{
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 10px;      /* текст ближе к фото */
+}
+
+.project-title{
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;                 /* текст ближе */
+}
+
+.project-title h3{
+    font-size: 20px;          /* немного меньше */
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.project-title p{
+    font-size: 14px;
+    margin: 0;
+}
+
 .project-content{
     position: relative;
+
     z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;               /* уменьшаем отступ между фото */
 }
 
-    /* шапка карточки: номер, название, кнопка — в одну строку */
-    .project-top {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap;
-        padding: 40px 25px 0;
-        margin-bottom: 20px;
-        gap: 8px;
-    }
+.project-big img{
+    width: 100%;
+    height: 150px;           /* уменьшаем высоту фото */
 
-    .project-left {
-        margin-left: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 1;
-        min-width: 0;
-    }
+    object-fit: cover;
 
-    .project-info {
-        min-width: 0;
-    }
+    border-radius: 16px;
+}
 
-    .project-label {
-        font-size: 16px;
-        white-space: nowrap;
-    }
+.project-small{
+    display: flex;
 
-    .project-name {
-        font-size: 12px;
-        white-space: nowrap;
-    }
+    gap: 10px;               /* уменьшаем отступ между маленькими фото */
+}
 
-    .project-btn {
-        font-size: 12px;
-        padding: 6px 12px;
-        border-width: 2px;
-        margin-right: 0;
-        white-space: nowrap;
-        flex-shrink: 0;
-        border-radius: 30px;
-    }
+.project-small img{
+    width: 50%;
+    height: 90px;            /* уменьшаем высоту */
+
+    object-fit: cover;
+
+    border-radius: 16px;
+}
+
+.live-btn{
+    padding: 6px 14px;
+    font-size: 12px;         /* меньше кнопка */
+}
+
+}
 
     /* изображения — горизонтальная раскладка как на десктопе */
     /*.project-content {
@@ -1039,37 +1044,6 @@ body{
         border-radius: 12px;
     }*/
 
-    .project-content{
-    display: flex;
-    flex-direction: column;
-
-    padding: 0 25px 35px;
-
-    gap: 14px;
-}
-
-.project-big,
-.project-small{
-    width: 100%;
-}
-
-.project-big img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-}
-
-.project-small{
-    display:flex;
-    flex-direction:row;
-    gap:12px;
-}
-
-.project-small img{
-    width:calc(50% - 6px);
-    height:120px;
-    object-fit:cover;
-}
 
     /* ================= CONTACT ================= */
 
