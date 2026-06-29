@@ -901,107 +901,118 @@ body{
         height: 80px;
     }
 
-    /* ================= PROJECTS ================= */
+    /* ---------- PROJECTS ---------- */
 
-    .project-card{
-    position: relative;
-
-    width: 100vw;          /* растягиваем по всей ширине экрана */
-    left: 50%;
-    transform: translateX(-50%);   /* убираем отступы по бокам */
-
-    padding: 20px 20px 22px;       /* уменьшаем высоту марки */
-    margin-bottom: 30px;
-
-    box-sizing: border-box;
+.projects{
+    padding:40px 0 50px;
 }
 
+.projects-title{
+    font-size:76px;
+    text-align:center;
+    margin-bottom:18px;
+}
+
+/* карточка */
+.project-card{
+    position:relative;
+    width:100vw;
+    left:50%;
+    transform:translateX(-50%);
+
+    padding:22px 22px 26px;
+    margin-bottom:26px;
+
+    box-sizing:border-box;
+}
+
+/* марка */
 .stamp-bg{
-    position: absolute;
+    position:absolute;
+    inset:0;
 
-    top: 0;
-    left: 0;
+    width:100%;
+    height:100%;
 
-    width: 100%;          /* растягиваем по ширине */
-    height: 100%;         /* уменьшаем по высоте */
-
-    object-fit: fill;
-
-    transform: none;
-
-    pointer-events: none;
+    object-fit:fill;
+    pointer-events:none;
 }
 
+/* верхняя часть */
 .project-top{
-    position: relative;
+    position:relative;
+    z-index:2;
 
-    z-index: 2;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    padding:10px 28px 0;
 
-    margin-bottom: 10px;      /* текст ближе к фото */
+    margin-bottom:12px;
 }
 
-.project-title{
-    display: flex;
-    flex-direction: column;
-
-    gap: 2px;                 /* текст ближе */
+.project-left{
+    margin-left:38px;   /* PROJECT немного правее */
 }
 
-.project-title h3{
-    font-size: 20px;          /* немного меньше */
-    margin: 0;
-    letter-spacing: 1px;
+.project-label{
+    font-size:18px;
+    margin-bottom:2px;
 }
 
-.project-title p{
-    font-size: 14px;
-    margin: 0;
+.project-name{
+    font-size:14px;
 }
 
+.project-btn{
+    font-size:12px;
+    padding:8px 18px;
+
+    border-radius:24px;
+    border-width:2px;
+}
+
+/* фотографии */
 .project-content{
-    position: relative;
+    position:relative;
+    z-index:2;
 
-    z-index: 2;
+    display:flex;
+    gap:10px;
 
-    display: flex;
-    flex-direction: column;
+    padding:0 28px 24px;
 
-    gap: 10px;               /* уменьшаем отступ между фото */
+    align-items:flex-start;
+}
+
+.project-big{
+    width:68%;
 }
 
 .project-big img{
-    width: 100%;
-    height: 150px;           /* уменьшаем высоту фото */
+    width:100%;
+    height:185px;
 
-    object-fit: cover;
-
-    border-radius: 16px;
+    object-fit:cover;
+    border-radius:18px;
 }
 
 .project-small{
-    display: flex;
+    width:32%;
 
-    gap: 10px;               /* уменьшаем отступ между маленькими фото */
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
 }
 
 .project-small img{
-    width: 50%;
-    height: 90px;            /* уменьшаем высоту */
+    width:100%;
+    height:87px;
 
-    object-fit: cover;
-
-    border-radius: 16px;
-}
-
-.live-btn{
-    padding: 6px 14px;
-    font-size: 12px;         /* меньше кнопка */
-}
-
+    object-fit:cover;
+    border-radius:16px;
 }
 
     /* изображения — горизонтальная раскладка как на десктопе */
