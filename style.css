@@ -917,9 +917,10 @@ body{
     /* карточка — вписывается целиком внутрь марки */
     .project-card {
         position: relative;
-        height: auto;
-        width: 92%;
-        max-width: 760px;
+        height: 580px;
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(-50vw + 50%);
         /* padding-bottom резервирует место под зубчики марки снизу */
         padding: 0 0 28px 0;
         margin: 0 auto 32px;
@@ -932,10 +933,12 @@ body{
     .stamp-bg {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
         transform: none;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 580px;
+        transform: translateX(-50%);
+        max-width: none;
         object-fit: fill;
         border-radius: 0;
         pointer-events: none;
