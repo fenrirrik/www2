@@ -919,7 +919,7 @@ body{
         position: relative;
         height: auto;
         width: 92%;
-        max-width: 420px;
+        max-width: 760px;
         /* padding-bottom резервирует место под зубчики марки снизу */
         padding: 0 0 28px 0;
         margin: 0 auto 32px;
@@ -950,7 +950,7 @@ body{
         justify-content: space-between;
         align-items: center;
         flex-wrap: nowrap;
-        padding: 52px 14px 0 14px;
+        padding: 48px 14px 4px 14px;
         margin-bottom: 10px;
         gap: 8px;
     }
@@ -1191,5 +1191,13 @@ body{
         width: 115px;
         height: 50px;
         font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stamp-bg {
+        top: 0;
+        height: 100%;
+        transform: none;
     }
 }
