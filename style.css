@@ -742,96 +742,119 @@ body{
 
 
 /* ================================================
-   МОБИЛЬНАЯ АДАПТАЦИЯ — вставить в конец style.css
-   Breakpoints: 768px (планшет) и 480px (телефон)
+   МОБИЛЬНАЯ АДАПТАЦИЯ — вставить в самый конец style.css
+   Ориентация: скриншоты телефона (≤ 480px)
    ================================================ */
 
 @media (max-width: 768px) {
 
-    /* ================= ШАПКА ФИКСИРОВАННАЯ ================= */
+    /* ================= ШАПКА ================= */
 
     .header {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        background: rgba(110, 75, 110, 0.85);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        padding: 10px 0;
+        background: rgba(75, 52, 75, 0.90);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        padding: 12px 0;
         z-index: 100;
     }
 
     .nav {
-        gap: 30px;
-        flex-wrap: wrap;
-        padding: 0 20px;
+        display: flex;
         justify-content: center;
+        gap: 20px;
+        flex-wrap: nowrap;
+        padding: 0 12px;
     }
 
     .nav a {
-        font-size: 15px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
     }
 
     /* ================= HERO ================= */
 
     .hero {
         height: 100svh;
-        min-height: 600px;
-        /* отступ сверху под фиксированную шапку */
-        padding-top: 60px;
+        min-height: 640px;
+        padding-top: 0;
+        overflow: hidden;
     }
 
+    /* "Hi, I'm Ksushka" — вверху по центру */
     .hero-title {
         font-size: 52px;
-        top: 75px;
-        white-space: nowrap;
-        letter-spacing: -1px;
-    }
-
-    /* девочка — посередине страницы */
-    .hero-girl {
-        width: 300px !important;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-48%) rotate(-6deg);
-    }
-
-    .contact-btn {
-        right: 50%;
-        transform: translateX(50%);
-        top: auto;
-        bottom: 14%;
-        width: 220px;
-        height: 70px;
-        font-size: 22px;
-    }
-
-    .hero-description {
+        top: 70px;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 4%;
-        font-size: 14px;
-        width: auto;
-        text-align: center;
         white-space: nowrap;
+        text-align: center;
+    }
+
+    /* девочка — по центру, занимает большую часть экрана */
+    .hero-girl {
+        width: 340px !important;
+        top: 130px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-6deg);
+    }
+
+    /* кнопка CONTACT ME — внизу по центру, над описанием */
+    .contact-btn {
+        position: absolute;
+        left: 50%;
+        right: auto;
+        top: auto;
+        bottom: 16%;
+        transform: translateX(-50%);
+        width: 240px;
+        height: 72px;
+        font-size: 22px;
+        border-radius: 54px;
+    }
+
+    .contact-btn:active {
+        transform: translateX(-50%) scale(0.97);
+        opacity: 0.9;
+    }
+
+    /* текст "IT'S MY WEBSITE..." — самый низ, по центру */
+    .hero-description {
+        position: absolute;
+        left: 50%;
+        right: auto;
+        bottom: 5%;
+        transform: translateX(-50%);
+        width: auto;
+        white-space: nowrap;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 700;
     }
 
     /* ================= ABOUT ================= */
 
     .about {
         min-height: auto;
-        padding: 50px 20px 40px;
-    }
-
-    .about-title {
-        font-size: 72px;
-        margin-left: 0;
-        margin-bottom: -30px;
+        padding: 50px 20px 30px;
         text-align: center;
     }
 
+    /* "ABOUT ME" — крупный заголовок сверху, по центру */
+    .about-title {
+        font-size: 80px;
+        margin-left: 0;
+        margin-bottom: -20px;
+        text-align: center;
+    }
+
+    /* картинка-записка растягивается на всю ширину */
     .about-note {
+        display: flex;
+        justify-content: center;
         margin-bottom: 0;
     }
 
@@ -839,14 +862,17 @@ body{
         width: 100%;
         max-width: 100%;
         top: 0;
+        position: relative;
     }
 
+    /* текст снизу */
     .about-bottom-text {
-        font-size: 14px;
+        font-size: 13px;
         max-width: 100%;
-        margin-top: -80px;
+        margin-top: 10px;
         padding: 0 10px;
         text-align: center;
+        line-height: 1.5;
     }
 
     .about-transition {
@@ -857,397 +883,386 @@ body{
 
     .skills {
         min-height: auto;
-        padding-bottom: 80px;
-        overflow: hidden;
+        padding-bottom: 50px;
+        overflow: visible;
     }
 
+    /* "SKILLS" — крупно слева, как на скрине */
     .skills-title {
-        font-size: 72px;
+        font-size: 80px;
         position: relative;
         top: auto;
         left: auto;
         padding: 40px 0 0 20px;
+        z-index: 2;
     }
 
+    /* убираем декоративную доску */
     .skills-board {
         display: none;
     }
 
+    /* навыки — вертикальный список */
     .skills-items {
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 24px;
-        padding: 30px 20px 40px;
+        gap: 28px;
+        padding: 30px 20px 10px;
+        z-index: 2;
     }
 
     .skill {
         position: static !important;
         left: auto !important;
         top: auto !important;
+        display: flex;
+        align-items: center;
+        gap: 16px;
     }
 
+    /* большие цифры 01, 02... */
     .num {
-        font-size: 60px;
-        min-width: 70px;
+        font-size: 72px;
+        min-width: 80px;
+        line-height: 1;
     }
 
+    /* текст навыка */
     .skill-text {
         font-size: 20px;
         width: auto;
+        line-height: 1.2;
     }
 
     .skills-projects-transition {
         height: 80px;
     }
 
-    /* ---------- PROJECTS ---------- */
+    /* ================= PROJECTS ================= */
 
-/* ================= PROJECTS ================= */
-
-.projects{
-    padding:20px 0 40px;
-}
-
-.projects-title{
-    font-size:70px;
-    text-align:center;
-    margin-bottom:-10px;
-}
-
-/* карточка проекта */
-
-.project-card{
-    position:relative;
-
-    width:96%;
-    height:510px;
-
-    margin:0 auto 35px;
-
-    padding:0;
-
-    box-sizing:border-box;
-}
-
-/* марка */
-
-.stamp-bg{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:fill;
-
-    pointer-events:none;
-}
-
-/* верх карточки */
-
-.project-top{
-    position:absolute;
-
-    top:32px;
-    left:0;
-
-    width:100%;
-
-    padding:0 34px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-
-    z-index:5;
-}
-
-.project-left{
-    margin-left:22px;
-}
-
-.project-info{
-    display:flex;
-    flex-direction:column;
-}
-
-.project-label{
-    font-size:22px;
-    font-weight:700;
-}
-
-.project-name{
-    font-size:15px;
-    margin-top:2px;
-}
-
-.project-btn{
-    font-size:13px;
-
-    padding:8px 18px;
-
-    border:2px solid #916C80;
-    border-radius:22px;
-
-    color:#916C80;
-    text-decoration:none;
-}
-
-/* фотографии */
-
-.project-content{
-    position:absolute;
-
-    top:105px;
-    left:28px;
-    right:28px;
-
-    display:flex;
-    gap:12px;
-
-    z-index:5;
-}
-
-.project-big{
-    width:66%;
-}
-
-.project-big img{
-    width:100%;
-    height:190px;
-
-    object-fit:cover;
-    border-radius:18px;
-}
-
-.project-small{
-    width:34%;
-
-    display:flex;
-    flex-direction:column;
-
-    gap:12px;
-}
-
-.project-small img{
-    width:100%;
-    height:89px;
-
-    object-fit:cover;
-    border-radius:16px;
-}
-
-    /* изображения — горизонтальная раскладка как на десктопе */
-    /*.project-content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: row;
-        height: 170px;
-        padding: 0 14px 0 14px;
-        gap: 8px;
-        margin-top: 0;
+    .projects {
+        padding: 20px 0 50px;
+        background: #FFF7AE;
     }
 
-    .project-big {
-        width: 60%;
+    /* "PROJECTS" — крупно, по центру */
+    .projects-title {
+        font-size: 72px;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    /* карточка проекта — как на скрине, с марочной рамкой */
+    .project-card {
+        position: relative;
+        top: auto;
+
+        width: 94%;
+        height: auto;
+        min-height: 320px;
+
+        margin: 0 auto 30px;
+        padding: 0;
+
+        overflow: visible;
+    }
+
+    /* марка на всю карточку */
+    .stamp-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
+        object-fit: fill;
+        transform: none;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* верхняя часть карточки: PROJECT / название / кнопка */
+    .project-top {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 32px 36px 0 52px;
+        margin-bottom: 0;
+    }
+
+    .project-left {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        gap: 2px;
+    }
+
+    .project-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .project-label {
+        font-size: 20px;
+        font-weight: 700;
+        color: #916C80;
+    }
+
+    .project-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #916C80;
+    }
+
+    /* кнопка LIVE PROJECT */
+    .project-btn {
+        font-size: 13px;
+        font-weight: 700;
+        padding: 8px 16px;
+        border: 2px solid #916C80;
+        border-radius: 20px;
+        color: #916C80;
+        text-decoration: none;
+        margin-right: 0;
+        white-space: nowrap;
+        align-self: center;
+    }
+
+    /* блок фотографий */
+    .project-content {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        height: auto;
+        padding: 16px 36px 36px 36px;
+        margin-top: 14px;
+    }
+
+    /* большая фотка */
+    .project-big {
+        width: 62%;
         flex-shrink: 0;
     }
 
     .project-big img {
         width: 100%;
-        height: 100%;
+        height: 190px;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: 16px;
     }
 
+    /* маленькие фотки — стопкой */
     .project-small {
-        width: 40%;
-        height: 100%;
+        width: 38%;
+        display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
         flex-shrink: 0;
     }
 
     .project-small img {
         width: 100%;
-        height: calc(50% - 4px);
+        height: 88px;
         object-fit: cover;
-        border-radius: 12px;
-    }*/
-
+        border-radius: 14px;
+    }
 
     /* ================= CONTACT ================= */
 
     .contact {
-        min-height: auto;
+        min-height: 100svh;
         padding: 60px 20px 60px;
-        align-items: flex-start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .contact::before {
-        width: 180px;
-        height: 180px;
+        display: none;
     }
 
     .contact-content {
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
-        gap: 40px;
+        gap: 36px;
     }
 
+    /* "LET'S GET IN TOUCH" — крупно, желтый */
     .contact-title {
-        font-size: 72px;
+        font-size: 80px;
         line-height: 0.9;
+        color: #F2EEA4;
     }
 
+    /* обёртка формы без стикера */
     .contact-form-wrap {
         width: 100%;
         height: auto;
         position: relative;
     }
 
+    /* убираем стикер-картинку, нам не нужна на мобайле */
     .contact-sticker {
         display: none;
     }
 
+    /* сама форма */
     .contact-form {
         position: static;
         width: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 24px;
-        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
         gap: 16px;
+
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        padding: 24px 20px 24px;
     }
 
     .contact-form input,
     .contact-form textarea {
+        background: rgba(255, 255, 255, 0.10);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        padding: 14px 18px;
         font-size: 18px;
-        padding: 14px 16px;
-        border-width: 2px;
+        font-weight: 600;
+        color: rgba(242, 238, 164, 0.7);
+        outline: none;
+        width: 100%;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        color: rgba(242, 238, 164, 0.5);
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: 1px;
     }
 
     .contact-form textarea {
-        height: 110px;
+        height: 120px;
+        resize: none;
     }
 
+    /* кнопка SEND — справа, тёмно-фиолетовая как на скрине */
     .contact-form button {
-        width: 130px;
-        height: 55px;
+        align-self: flex-end;
+        width: 140px;
+        height: 60px;
         font-size: 22px;
-        border-width: 2px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1px;
+        color: #F2EEA4;
+        background: rgba(75, 52, 75, 0.7);
+        border: none;
+        border-radius: 18px;
+        cursor: pointer;
+        transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
     }
+
+    /* подсветка при нажатии — как на последней фотке */
+    .contact-form button:active {
+        background: #F5D0E4;
+        color: #7B5A78;
+        box-shadow:
+            0 0 12px #F5D0E4,
+            0 0 28px #F5D0E4,
+            0 0 50px #F5D0E4;
+        transform: scale(0.97);
+    }
+
+    .contact-form button:hover {
+        background: rgba(95, 65, 95, 0.85);
+    }
+
 }
 
 /* ================================================
-   МАЛЕНЬКИЕ ТЕЛЕФОНЫ — до 480px
+   МАЛЕНЬКИЕ ТЕЛЕФОНЫ — до 390px
    ================================================ */
 
-@media (max-width: 480px) {
+@media (max-width: 390px) {
 
-    /* ШАПКА */
-
-    .header {
-        padding: 8px 0;
+    .nav a {
+        font-size: 12px;
     }
 
     .nav {
-        gap: 16px;
-        padding: 0 10px;
-    }
-
-    .nav a {
-        font-size: 13px;
-    }
-
-    /* HERO */
-
-    .hero {
-        padding-top: 55px;
+        gap: 12px;
     }
 
     .hero-title {
-        font-size: 38px;
-        top: 62px;
+        font-size: 42px;
     }
 
     .hero-girl {
-        width: 250px !important;
+        width: 290px !important;
+        top: 120px;
     }
 
     .contact-btn {
-        width: 190px;
-        height: 60px;
-        font-size: 18px;
-        bottom: 12%;
+        width: 210px;
+        height: 64px;
+        font-size: 19px;
+        bottom: 14%;
     }
 
     .hero-description {
         font-size: 12px;
-        bottom: 3%;
+        bottom: 4%;
     }
 
-    /* ABOUT */
-
     .about-title {
-        font-size: 58px;
+        font-size: 64px;
     }
 
     .about-bottom-text {
         font-size: 12px;
-        margin-top: -50px;
     }
 
-    /* SKILLS */
-
     .skills-title {
-        font-size: 58px;
+        font-size: 64px;
     }
 
     .num {
-        font-size: 48px;
-        min-width: 55px;
+        font-size: 58px;
+        min-width: 65px;
     }
 
     .skill-text {
         font-size: 17px;
     }
 
-    /* PROJECTS */
-
     .projects-title {
         font-size: 58px;
     }
 
-    .project-content {
-        height: 150px;
+    .project-big img {
+        height: 160px;
     }
 
-    /* CONTACT */
+    .project-small img {
+        height: 73px;
+    }
 
     .contact-title {
-        font-size: 58px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 16px;
+        font-size: 64px;
     }
 
     .contact-form button {
-        width: 115px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    .stamp-bg {
-        top: 0;
-        height: 100%;
-        transform: none;
+        width: 120px;
+        height: 52px;
+        font-size: 19px;
     }
 }
