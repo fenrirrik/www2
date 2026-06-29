@@ -284,7 +284,7 @@ body{
 
 @media (max-width: 768px) {
 
-    /*  ШАПКА  */
+    /* ================= ШАПКА ================= */
 
     .header {
         position: fixed;
@@ -311,23 +311,24 @@ body{
         letter-spacing: 0.5px;
     }
 
-    /*  HERO  */
+    /* ================= HERO ================= */
 
     .hero {
         height: 100svh;
         min-height: 640px;
-        padding-top: 0;
         overflow: hidden;
+        /* фон из основного css остаётся (bg-waves.png + фиолетовый) */
     }
 
-    /* "Hi, I'm Ksushka" — вверху по центру */
     .hero-title {
+        font-family: "Gatok";        /* возвращаем кастомный шрифт */
         font-size: 52px;
         top: 70px;
         left: 50%;
         transform: translateX(-50%);
         white-space: nowrap;
         text-align: center;
+        color: #FFF7AE;
     }
 
     .hero-girl {
@@ -336,7 +337,6 @@ body{
         left: 50%;
         transform: translateX(-50%) rotate(-6deg);
     }
-
 
     .contact-btn {
         position: absolute;
@@ -349,13 +349,13 @@ body{
         height: 72px;
         font-size: 22px;
         border-radius: 54px;
+        /* градиент остаётся из основного css */
     }
 
     .contact-btn:active {
         transform: translateX(-50%) scale(0.97);
         opacity: 0.9;
     }
-
 
     .hero-description {
         position: absolute;
@@ -368,24 +368,27 @@ body{
         font-size: 14px;
         text-align: center;
         font-weight: 700;
+        color: #FFF7AE;
     }
 
-    /*  ABOUT */
+    /* ================= ABOUT ================= */
 
+    /* фон жёлтый — из основного css (#FFF6A9) */
     .about {
         min-height: auto;
         padding: 50px 20px 30px;
         text-align: center;
+        background: #FFF6A9;        /* явно, чтобы не потерялся */
     }
 
-
     .about-title {
+        font-family: "Gatok";       /* кастомный шрифт */
         font-size: 80px;
+        color: #916C80;
         margin-left: 0;
         margin-bottom: -20px;
         text-align: center;
     }
-
 
     .about-note {
         display: flex;
@@ -401,29 +404,35 @@ body{
     }
 
     .about-bottom-text {
+        font-family: 'Montserrat', sans-serif;
         font-size: 13px;
         max-width: 100%;
         margin-top: 10px;
         padding: 0 10px;
         text-align: center;
         line-height: 1.5;
+        color: #916C80;
     }
 
     .about-transition {
         height: 60px;
+        background: linear-gradient(to bottom, #FFF6A9 0%, #FFE1C6 100%);
     }
 
-    /* SKILLS  */
+    /* ================= SKILLS ================= */
 
+    /* фон персиковый — из основного css (#FFE1C6) */
     .skills {
         min-height: auto;
         padding-bottom: 50px;
         overflow: visible;
+        background: #FFE1C6;        /* явно, чтобы не потерялся */
     }
 
- 
     .skills-title {
+        font-family: "Gatok";       /* кастомный шрифт */
         font-size: 80px;
+        color: #6F4D64;
         position: relative;
         top: auto;
         left: auto;
@@ -431,12 +440,10 @@ body{
         z-index: 2;
     }
 
-  
     .skills-board {
         display: none;
     }
 
-   
     .skills-items {
         position: relative;
         display: flex;
@@ -453,78 +460,88 @@ body{
         display: flex;
         align-items: center;
         gap: 16px;
+        color: #6F4D64;
     }
 
-  
+    /* большие цифры — шрифт Gatok */
     .num {
+        font-family: "Gatok";
         font-size: 72px;
         min-width: 80px;
         line-height: 1;
+        color: #6F4D64;
     }
 
-   
     .skill-text {
+        font-family: 'Montserrat', sans-serif;
         font-size: 20px;
+        font-weight: 700;
         width: auto;
         line-height: 1.2;
+        color: #6F4D64;
     }
 
     .skills-projects-transition {
         height: 80px;
+        background: linear-gradient(to bottom, #FFE1C6, #FFF7AE);
     }
 
-    /*  PROJECTS  */
+    /* ================= PROJECTS ================= */
 
+    /* фон жёлтый — из основного css (#FFF7AE) */
     .projects {
         padding: 20px 0 50px;
-        background: #FFF7AE;
+        background: #FFF7AE;        /* явно */
     }
 
-   
     .projects-title {
+        font-family: "Gatok";       /* кастомный шрифт */
         font-size: 72px;
-        text-align: center;
-        margin-left: 0;
+        color: #916C80;
+        text-align: left;
+        margin-left: 16px;
         margin-top: 0;
         margin-bottom: 20px;
     }
 
-   
+    /* карточка проекта */
     .project-card {
         position: relative;
         top: auto;
 
-        width: 94%;
+        /* почти вся ширина страницы */
+        width: 96%;
         height: auto;
-        min-height: 320px;
+        min-height: auto;
 
-        margin: 0 auto 30px;
+        margin: 0 auto 40px;
         padding: 0;
 
         overflow: visible;
     }
 
-   
+    /* марка — растянута по всей ширине карточки */
     .stamp-bg {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100%;           /* вся ширина карточки */
         height: 100%;
-        object-fit: fill;
+        object-fit: fill;      /* растягиваем, не обрезаем */
         transform: none;
+        transform-origin: unset;
         pointer-events: none;
         z-index: 1;
     }
 
-   
+    /* верхняя часть карточки — чуть ниже края марки */
     .project-top {
         position: relative;
         z-index: 5;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        padding: 32px 36px 0 52px;
+        align-items: center;
+        padding: 44px 36px 0 48px;  /* top больше — опускаем вниз */
         margin-bottom: 0;
     }
 
@@ -542,19 +559,21 @@ body{
     }
 
     .project-label {
+        font-family: 'Montserrat', sans-serif;
         font-size: 20px;
         font-weight: 700;
         color: #916C80;
     }
 
     .project-name {
+        font-family: 'Montserrat', sans-serif;
         font-size: 15px;
         font-weight: 600;
         color: #916C80;
     }
 
-   
     .project-btn {
+        font-family: 'Montserrat', sans-serif;
         font-size: 13px;
         font-weight: 700;
         padding: 8px 16px;
@@ -564,10 +583,9 @@ body{
         text-decoration: none;
         margin-right: 0;
         white-space: nowrap;
-        align-self: center;
     }
 
-    
+    /* блок фотографий */
     .project-content {
         position: relative;
         z-index: 5;
@@ -575,26 +593,24 @@ body{
         flex-direction: row;
         gap: 10px;
         height: auto;
-        padding: 16px 36px 36px 36px;
+        padding: 16px 36px 44px 36px;
         margin-top: 14px;
     }
 
-   
     .project-big {
-        width: 62%;
+        width: 58%;
         flex-shrink: 0;
     }
 
     .project-big img {
         width: 100%;
-        height: 190px;
+        height: 200px;
         object-fit: cover;
         border-radius: 16px;
     }
 
-   
     .project-small {
-        width: 38%;
+        width: 42%;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -603,14 +619,16 @@ body{
 
     .project-small img {
         width: 100%;
-        height: 88px;
+        height: 93px;
         object-fit: cover;
         border-radius: 14px;
     }
 
-    /* CONTACT  */
+    /* ================= CONTACT ================= */
 
+    /* фон фиолетовый — из основного css (#7B5A78) */
     .contact {
+        background: #7B5A78;        /* явно */
         min-height: 100svh;
         padding: 60px 20px 60px;
         display: flex;
@@ -629,36 +647,32 @@ body{
         gap: 36px;
     }
 
-    
     .contact-title {
+        font-family: "Gatok";       /* кастомный шрифт */
         font-size: 80px;
         line-height: 0.9;
         color: #F2EEA4;
     }
 
-    
     .contact-form-wrap {
         width: 100%;
         height: auto;
         position: relative;
     }
 
-    
     .contact-sticker {
         display: none;
     }
 
-   
     .contact-form {
         position: static;
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 16px;
-
         background: rgba(255, 255, 255, 0.08);
         border-radius: 28px;
-        padding: 24px 20px 24px;
+        padding: 24px 20px;
     }
 
     .contact-form input,
@@ -667,6 +681,7 @@ body{
         border: 2px solid rgba(255, 255, 255, 0.25);
         border-radius: 16px;
         padding: 14px 18px;
+        font-family: 'Montserrat', sans-serif;
         font-size: 18px;
         font-weight: 600;
         color: rgba(242, 238, 164, 0.7);
@@ -688,14 +703,14 @@ body{
         resize: none;
     }
 
-    
+    /* кнопка SEND */
     .contact-form button {
         align-self: flex-end;
         width: 140px;
         height: 60px;
+        font-family: 'Montserrat', sans-serif;
         font-size: 22px;
         font-weight: 700;
-        font-family: 'Montserrat', sans-serif;
         letter-spacing: 1px;
         color: #F2EEA4;
         background: rgba(75, 52, 75, 0.7);
@@ -705,7 +720,11 @@ body{
         transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
     }
 
-   
+    .contact-form button:hover {
+        background: rgba(95, 65, 95, 0.85);
+    }
+
+    /* подсветка при нажатии */
     .contact-form button:active {
         background: #F5D0E4;
         color: #7B5A78;
@@ -716,85 +735,33 @@ body{
         transform: scale(0.97);
     }
 
-    .contact-form button:hover {
-        background: rgba(95, 65, 95, 0.85);
-    }
-
 }
 
-/* МАЛЕНЬКИЕ ТЕЛЕФОНЫ — до 390px*/
+/* ================================================
+   МАЛЕНЬКИЕ ТЕЛЕФОНЫ — до 390px
+   ================================================ */
 
 @media (max-width: 390px) {
 
-    .nav a {
-        font-size: 12px;
-    }
+    .nav a { font-size: 12px; }
+    .nav { gap: 12px; }
 
-    .nav {
-        gap: 12px;
-    }
+    .hero-title { font-size: 42px; }
+    .hero-girl { width: 290px !important; top: 120px; }
+    .contact-btn { width: 210px; height: 64px; font-size: 19px; bottom: 14%; }
+    .hero-description { font-size: 12px; bottom: 4%; }
 
-    .hero-title {
-        font-size: 42px;
-    }
+    .about-title { font-size: 64px; }
+    .about-bottom-text { font-size: 12px; }
 
-    .hero-girl {
-        width: 290px !important;
-        top: 120px;
-    }
+    .skills-title { font-size: 64px; }
+    .num { font-size: 58px; min-width: 65px; }
+    .skill-text { font-size: 17px; }
 
-    .contact-btn {
-        width: 210px;
-        height: 64px;
-        font-size: 19px;
-        bottom: 14%;
-    }
+    .projects-title { font-size: 58px; }
+    .project-big img { height: 165px; }
+    .project-small img { height: 75px; }
 
-    .hero-description {
-        font-size: 12px;
-        bottom: 4%;
-    }
-
-    .about-title {
-        font-size: 64px;
-    }
-
-    .about-bottom-text {
-        font-size: 12px;
-    }
-
-    .skills-title {
-        font-size: 64px;
-    }
-
-    .num {
-        font-size: 58px;
-        min-width: 65px;
-    }
-
-    .skill-text {
-        font-size: 17px;
-    }
-
-    .projects-title {
-        font-size: 58px;
-    }
-
-    .project-big img {
-        height: 160px;
-    }
-
-    .project-small img {
-        height: 73px;
-    }
-
-    .contact-title {
-        font-size: 64px;
-    }
-
-    .contact-form button {
-        width: 120px;
-        height: 52px;
-        font-size: 19px;
-    }
+    .contact-title { font-size: 64px; }
+    .contact-form button { width: 120px; height: 52px; font-size: 19px; }
 }
